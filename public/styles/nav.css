@@ -24,9 +24,3 @@ nav span {
   margin-right: 1.5em;
 }
 
-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
