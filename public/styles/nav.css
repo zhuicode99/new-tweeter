@@ -1,0 +1,32 @@
+nav {
+  position:fixed;
+  background-color: #4056A1;
+  font-size: larger;
+  height: 120px;
+  display: flex;
+  justify-content: space-between;
+  width:100%;
+
+}
+nav span {
+  font-family: 'Bungee', cursive;
+  color: #FFFFFF;
+  margin-left:1.5em;
+  /* margin-top: 800px; */
+}
+
+.nav-right {
+  color:white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-right: 1.5em;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
