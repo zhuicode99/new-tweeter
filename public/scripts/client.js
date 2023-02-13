@@ -11,3 +11,11 @@ nav-right.addEventListener("click", () => {
 });
 
  */
+
+/* window.onload = function() {
+  var textarea = document.querySelector("textarea");
+
+  textarea.addEventListener("input", function(event) {
+    console.log("Key down: ", event.key);
+  })
+} */
