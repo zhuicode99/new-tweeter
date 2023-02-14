@@ -3,34 +3,14 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-const tweets = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-]
+
+
+
 
 
 $(document).ready(function() {
   const createTweetElement = function(data) {
+  let time = timeago.format(new Date(data.created_at));
   let $tweet = 
   `<article class="tweet-article">
   <header class="tweet-header">
@@ -48,7 +28,7 @@ $(document).ready(function() {
     </div>
     <div class="horizontal-line"></div>
   <footer class="tweet-footer">
-    <p>posted ten days ago</p>
+    <p>${time};</p>
       <div class='icons'>
         <div class="icon">
           <i class="fa-solid fa-flag"></i>
@@ -78,6 +58,50 @@ const renderTweets = function(allData) {
   }
 }
 
-renderTweets(tweets)
+
+const loadTweets = () => {
+  $.ajax({
+    url:'/tweets',
+    method:'GET',
+    dataType: 'json', //jQuery 会将服务器返回的数据解析为 JSON 格式，并将其作为参数传递给 success 回调函数中的 data 参数。
+    //如果服务器返回的数据不是 JSON 格式，那么 jQuery 会在请求失败时调用 error 回调函数。
+    success: (data) => {
+      console.log(data, 'get data');
+      renderTweets(data);
+    },
+    error: (error) => {
+      console.error(error);
+    }
+  })
+}
+
+
+$('#form').submit((event) => { //要从form来listen，不能直接button
+  event.preventDefault();
+  let input = $("#tweet-text").val();
+  let serializedData = $("#tweet-text").serialize();//.serialize() function turns a set of form data into a query string
+console.log(input, serializedData,'here')
+  if (input.length === 0) {
+    alert('tweets must contain at least one character!')
+  } else if (input.length > 140) {
+    alert('tweets must be 140 character or fewer!')
+  } else {
+    $.ajax({
+      url: "/tweets",
+      type: "POST",
+      data: serializedData,
+      }) //把序列化后的数据post到服务器的tweets路径，这个数据将作为 POST 请求的 body 数据发送到服务器上。
+      .then(() => {
+        loadTweets(); // load tweets without refresh page
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+})
+
+
+
+
 
 });
