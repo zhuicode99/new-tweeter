@@ -49,7 +49,6 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-       <!--  <h2>Compose Tweet</h2> -->
         <form action="/tweets" method="post">
           <label for="tweet-text">What are you humming about?</label>
           <textarea class="tex" name="text" id="tweet-text"></textarea>
@@ -60,63 +59,9 @@
         </form>
       </section>
 
-      <section id="tweet-container">
-        <article class="tweet-article">
-          <header class="tweet-header">
-            <div class="avatar-name">
-              <img class="tweet-avatar" src="https://i.imgur.com/73hZDYK.png"></img>
-              <h5>jason</h5>
+      <section id="tweets-container">
 
-            </div>
-            <h5 class="userID">@jasonchen</h5>
-          </header>
-             <div class="tweet-post">
-               <p>
-                If I have seen further it is by standing on the shoulders of giants
-               </p>
-            </div>
-            <div class="horizontal-line"></div>
-          <footer class="tweet-footer">
-            <p>posted ten days ago</p>
-              <div class='icons'>
-                <div class="icon">
-                  <i class="fa-solid fa-flag"></i>
-                </div>
-                <div class="icon">
-
-                  <i class="fas fa-retweet"></i>
-                </div>
-                <div class="icon">
-
-                  <i class="fa-solid fa-heart"></i>
-                </div>
-              </div>
-          </footer>
-      </article>
-  
-        <article class="tweet-article">
-          <header class="tweet-header">
-            <div class="tweet-avatar">
-              <img src="https://i.imgur.com/nlhLi3I.png"></img>
-            </div>
-            <h5>jason chen</h5>
-            <h5 class="userID">@jasonchen</h5>
-          </header>
-             <div class="tweet-post">
-               <p>
-                  If I have seen further it is by standing on the shoulders of giants
-               </p>
-            </div>
-          <footer class="tweet-footer">
-            <p>posted ten days ago</p>
-              <div class='icons'>
-                <i class="far fa-flag"></i>
-                <i class="fas fa-retweet"></i>
-                <i class="far fa-heart"></i>
-              </div>
-          </footer>
-      </article>
-  </section>
+      </section>
     </main>
   </body>
 </html>
