@@ -11,6 +11,15 @@
 $(document).ready(function() {
   const createTweetElement = function(data) {
   let time = timeago.format(new Date(data.created_at));
+
+
+// use escape to prevent XSS-cross site scripting
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str)); //add escape in textarea to prevent xss
+  return div.innerHTML;  
+};
+
   let $tweet = 
   `<article class="tweet-article">
   <header class="tweet-header">
@@ -23,7 +32,7 @@ $(document).ready(function() {
   </header>
      <div class="tweet-post">
        <p>
-       ${data.content.text}
+       ${escape(data.content.text)}
        </p>
     </div>
     <div class="horizontal-line"></div>
@@ -49,7 +58,7 @@ return $tweet;
 }
 
 
-
+//array里的所有post数据，分别用上面的func进行处理后，插入container里
 const renderTweets = function(allData) {
 
   for (let data of allData) {
@@ -58,7 +67,9 @@ const renderTweets = function(allData) {
   }
 }
 
-
+//点击submit button发送post内容到/tweets端，生成新用户名
+//用loadtweets来从/tweets返回所有数据（包含已经有的用户名和post）
+//然后用rendertweets来处理
 const loadTweets = () => {
   $.ajax({
     url:'/tweets',
