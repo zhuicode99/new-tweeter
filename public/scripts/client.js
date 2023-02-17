@@ -134,6 +134,24 @@ $("#arrow").on("click", function(event){
   $(".new-tweet").toggle();//turn it on and off(show/hide)
 });
 
+//back to top button
+let backToTopBtn = document.getElementById("back-to-top-btn");
+
+window.onscroll = function() {
+  // 如果页面向下滚动了100像素，则显示“返回顶部”按钮
+  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    backToTopBtn.style.display = "block";
+  } else {
+    backToTopBtn.style.display = "none";
+  }
+};
+
+backToTopBtn.onclick = function() {
+  document.body.scrollTop = 0; // Safari
+  document.documentElement.scrollTop = 0; // Chrome, Firefox, IE and Opera
+};
+
+
 
 
 });

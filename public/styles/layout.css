@@ -35,3 +35,23 @@ main {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+
+ #back-to-top-btn {
+  display: none; /* 默认情况下隐藏按钮 */
+  position: fixed; /* 按钮固定在浏览器窗口的右下角 */
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  font-size: 16px;
+  background-color: red;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#back-to-top-btn:hover {
+  font-weight: bolder;
+}
