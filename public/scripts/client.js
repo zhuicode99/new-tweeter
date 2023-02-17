@@ -129,6 +129,10 @@ console.log(input, serializedData,'here')
 })
 
 
+//red arrow
+$("#arrow").on("click", function(event){
+  $(".new-tweet").toggle();//turn it on and off(show/hide)
+});
 
 
 
