@@ -93,9 +93,22 @@ $('#form').submit((event) => { //要从form来listen，不能直接button
   let serializedData = $("#tweet-text").serialize();//.serialize() function turns a set of form data into a query string
 console.log(input, serializedData,'here')
   if (input.length === 0) {
-    alert('tweets must contain at least one character!')
+    $(".error-dialog").slideDown(1200);
+    $(".error-text").text("Say something! Pls say something! Thank you!");
+    $("#tweet-text").focus();
+    setTimeout(function() {
+      $(".error-dialog").slideUp(1000);
+    }, 2000);
   } else if (input.length > 140) {
-    alert('tweets must be 140 character or fewer!')
+    $("#tweet-text").val("");
+    $("#tweet-text").focus();
+    $(".counter").text("140");
+    $(".counter").css("color", "black");
+    $(".error-dialog").slideDown(1200);
+    $(".error-text").text("Too long. Pls rspct our abitrary limit of 140 chars! Thank You!");
+    setTimeout(function() {
+      $(".error-dialog").slideUp(1000);
+    }, 2000);
   } else {
     $.ajax({
       url: "/tweets",
@@ -103,6 +116,10 @@ console.log(input, serializedData,'here')
       data: serializedData,
       }) //把序列化后的数据post到服务器的tweets路径，这个数据将作为 POST 请求的 body 数据发送到服务器上。
       .then(() => {
+        $("#tweet-text").val("");
+        $(".counter").text("140");
+        $(".counter").css("color", "black");
+        $("#tweet-text").focus();
         loadTweets(); // load tweets without refresh page
       })
       .catch(error => {

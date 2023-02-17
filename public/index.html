@@ -52,6 +52,11 @@
     <main class="container">
       <section class="new-tweet">
         <form id="form" action="/tweets" method="post">
+          <dialog class="error-dialog">
+            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+            <span class="error-text"></span>
+            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+          </dialog>
           <label for="tweet-text">What are you humming about?</label>
           <textarea class="tex" name="text" id="tweet-text"></textarea>
           <div class="tweet-bottom">
