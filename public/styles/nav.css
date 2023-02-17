@@ -19,8 +19,30 @@ nav span {
   color:white;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
+  justify-content: space-around;
+  align-items: center;
   margin-right: 1.5em;
+
 }
 
+
+
+#arrow {
+  color:red;
+  position: absolute;
+  animation: move-up-down 1s ease-in-out infinite alternate;
+
+}
+
+#arrow:hover {
+  cursor: pointer;
+}
+
+@keyframes move-up-down {
+  from {
+    top: 80px;
+  }
+  to {
+    top: 90px;
+  }
+}
