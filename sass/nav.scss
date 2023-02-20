@@ -1,0 +1,71 @@
+nav {
+  position:fixed;
+  background-color: #4056A1;
+  font-size: larger;
+  height: 120px;
+  display: flex;
+  justify-content: space-between;
+  width:100%;
+
+  .nav-left {
+    font-family: 'Bungee', cursive, sans-serif;
+    color: #FFFFFF;
+    margin-left:1.5em;
+    padding-top: 40px;
+    font-size: larger;
+  }
+
+  .nav-right {
+    color:white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 1.5em;
+  
+    #write {
+      font-weight: bolder;
+      font-family: sans-serif;
+    }
+
+    #arrow {
+      color:red;
+      position: absolute;
+      animation: move-up-down 1s ease-in-out infinite alternate;
+    
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes move-up-down {
+  from {
+    top: 80px;
+  }
+  to {
+    top: 90px;
+  }
+}
+
+
+@media only screen and (max-width: 1024px) {
+  nav {
+    background-color: #ff9900;
+    background-image: url("https://www.transparenttextures.com/patterns/blizzard.png");
+    height: 120px;
+  }
+}

@@ -1,9 +1,9 @@
 .new-tweet {
-  display: flex;
+  display: flex; 
   flex-direction: column;
   justify-content: center;
-  width: 100%;
-}
+  width:100%;
+  }
 
 .tweet-bottom {
   display: flex;
@@ -11,23 +11,22 @@
 }
 
 .tweet-bottom button {
-  color: white;
+  color:white;
   background-color: #4056A1;
-  font-family: "Bungee", cursive;
+  font-family: 'Bungee', cursive;
 }
-
 .tweet-bottom output {
   font-weight: bold;
 }
 
 textarea {
-  border-style: hidden;
+  border-style:hidden;
   border-bottom: 5px solid;
   background-color: #f4f1ec;
   width: 100%;
 }
 
 .error-dialog {
-  color: red;
-  width: 80%;
+  color:red;
+  width:80%;
 }
