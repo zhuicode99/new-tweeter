@@ -1,7 +1,9 @@
-section {
-  display: flex;
-  justify-content: flex-start;
-}
+.new-tweet {
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  width:100%;
+  }
 
 .tweet-bottom {
   display: flex;
@@ -21,10 +23,10 @@ textarea {
   border-style:hidden;
   border-bottom: 5px solid;
   background-color: #f4f1ec;
-  width: 100%
+  width: 100%;
 }
 
 .error-dialog {
   color:red;
-
+  width:80%;
 }

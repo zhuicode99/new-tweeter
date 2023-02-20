@@ -43,11 +43,9 @@ const escape = function (str) {
           <i class="fa-solid fa-flag"></i>
         </div>
         <div class="icon">
-
           <i class="fas fa-retweet"></i>
         </div>
         <div class="icon">
-
           <i class="fa-solid fa-heart"></i>
         </div>
       </div>

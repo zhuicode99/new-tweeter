@@ -9,10 +9,20 @@ nav {
 
 }
 nav span {
-  font-family: 'Bungee', cursive;
+  font-family: 'Bungee', cursive, sans-serif;
   color: #FFFFFF;
   margin-left:1.5em;
   /* margin-top: 800px; */
+}
+
+#write {
+  font-weight: bolder;
+  font-family: sans-serif;
+}
+
+.nav-left {
+  padding-top: 40px;
+  font-size: larger;
 }
 
 .nav-right {
@@ -44,5 +54,14 @@ nav span {
   }
   to {
     top: 90px;
+  }
+}
+
+
+@media only screen and (max-width: 1024px) {
+  nav {
+    background-color: #ff9900;
+    background-image: url("https://www.transparenttextures.com/patterns/blizzard.png");
+    height: 120px;
   }
 }
